@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Fitness Freaks Home</title>
     <link rel="icon" href="media/fotos/favicon/apple-icon-57x57.png">
+    <link rel="stylesheet" href="../examenproject/css/normalize.css">
+    <link rel="stylesheet" href="../examenproject/css/project.css">
 </head>
 <body>
 <header>
@@ -13,22 +15,16 @@
     <map name="map" id="map">
         <area alt="website logo" href="index.html" shape="rect" coords="2,3,196,130">
     </map>
-
-    <form method="get" novalidate>
-        <label for="search"></label>
-        <input type="text" id="search" placeholder="Waar ben je naar op zoek..." maxlength="150" size="50" required>
-        <button type="submit">Zoek</button>
-    </form>
-
-    <nav>
+    <p class="paginatitel">Fitness Freaks</p>
+    <nav class="menu">
         <h2>Menu</h2>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="html/producten.html">Producten</a>
+            <li class="submenu"><a href="html/producten.html">Producten</a>
                 <ul>
-                    <li><a href="html/producten.html#kettlebells">KETTLEBELLS</a></li>
-                    <li><a href="html/producten.html#fitnessmatten">FITNESS MATTEN</a></li>
-                    <li><a href="html/producten.html#weerstandsbanden">WEERSTANDSBANDEN</a></li>
+                    <li><a href="html/producten.html#kettlebells">Kettlebells</a></li>
+                    <li><a href="html/producten.html#fitnessmatten">Fitness Matten</a></li>
+                    <li><a href="html/producten.html#weerstandsbanden">Weerstandbanden</a></li>
                 </ul>
             </li>
             <li><a href="html/contacten.html">Contact</a></li>
@@ -42,7 +38,7 @@
         <h2>About</h2>
         <aside>
             <h3>Foto fitness accessoires</h3>
-            <img src="media/fotos/home_fitness_bench.png" alt="dames bij een bank foto voor home">
+            <img class="foto_schaling" src="media/fotos/home_fitness_bench.png" alt="dames bij een bank foto voor home">
         </aside>
         <section>
             <h3>Fitness accessoires</h3>
@@ -54,11 +50,11 @@
         </section>
         <section>
             <h3>Waarom fitness accessoires</h3>
-            <p>Ik heb voor dit onderwerk gekozen omdat meeste andere onderwerpen die mij intereseren al gekozen waren. Daarnaast, heb ik vroeger aan fitness gedaan en leek het mij daarom een goed alternatief</p>
+            <p>Ik heb voor dit onderwerp gekozen omdat meeste andere onderwerpen die mij intereseren al gekozen waren. Daarnaast, heb ik vroeger aan fitness gedaan en leek het mij daarom een goed alternatief</p>
         </section>
     </article>
     <!-- testemonials -->
-    <section>
+    <section class="testimonials">
         <h2>Testemonials</h2>
         <blockquote>
             Ik heb vaker bij Fitness Freaks besteld omdat ze de beste customer service bieden.

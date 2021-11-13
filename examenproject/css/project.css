@@ -1,0 +1,157 @@
+/*------------------------------------------------------*/
+/*Algemene eigenschappen*/
+/*------------------------------------------------------*/
+
+/*Algemene font*/
+* {
+    font-family: "Arial", serif;
+    background: aliceblue;
+}
+
+h1, h2, h3 {
+    color: dodgerblue;
+}
+
+
+
+/*body 95% van schermgrootte gecentreerd*/
+body {
+    margin: 0 auto;
+    width: 95%;
+}
+
+/*pagina titel naast logo stylen*/
+.paginatitel {
+    font-size: 2em;
+    color: blue;
+    text-transform: uppercase;
+}
+
+/*lijsten naast elkaar*/
+/*li {*/
+/*    display: inline-block;*/
+/*}*/
+
+footer {
+    clear: both;
+}
+
+.menu ul li{
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.75em 1em;
+    display: block;
+    text-align: center;
+}
+
+
+/*Menu*/
+.menu ul {
+    display: flex;
+}
+
+.menu > ul {
+    flex-direction: row;
+}
+
+.menu > ul > li {
+    flex-grow: 1;
+}
+
+
+.menu ul ul {
+    flex-direction: column;
+    /*margin-left: -40px;*/
+}
+
+.menu > ul > .submenu{
+    position: relative;
+}
+
+
+.menu .submenu > ul {
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height 0s 0.75s;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+}
+
+.menu .submenu:hover > ul {
+    max-height: 350px;
+    transition: max-height 1s ease-in 0.2s;
+}
+
+.menu > ul a {
+    background: lightblue;
+    color: white;
+}
+
+.menu .submenu > ul a {
+    background: lightblue;
+    color: blue;
+}
+
+.menu .submenu > a:after {
+    content: '+';
+    padding-left: 5px;
+}
+.menu  > ul a:hover {
+    background: aliceblue;
+    color: blue;
+}
+
+ul  {
+    list-style: none;
+}
+
+.foto_schaling {
+    max-width: 100%;
+    min-width: 100px;
+    min-height: 80px;
+    width: auto;
+    height: auto;
+>}
+
+
+/*.menu > ul {*/
+/*    font-size: 0;*/
+/*}*/
+
+
+
+
+/*.menu > ul > li {*/
+/*    display: inline-block;*/
+/*    vertical-align: top;*/
+/*    box-sizing: border-box;*/
+/*    width: 33.3%;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+
+
+/*------------------------------------------------------*/
+/*Home pagina*/
+/*------------------------------------------------------*/
+
+.testimonials blockquote {
+    font-family: Garamond, serif;
+    font-style: italic;
+}
+
+.testimonials blockquote cite{
+    font-size: 0.8em;
+}
+
+
+
+/*------------------------------------------------------*/
+/*Product pagina*/
+/*------------------------------------------------------*/
