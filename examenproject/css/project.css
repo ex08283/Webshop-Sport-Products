@@ -8,8 +8,12 @@
     background: aliceblue;
 }
 
-h1, h2, h3 {
+h1, h2 {
     color: dodgerblue;
+}
+
+h3 {
+    color: mediumblue;
 }
 
 /*Titels onzichtbaar maken, maar toch zichtbaar voor screenreader*/
@@ -20,13 +24,6 @@ h1, h2, h3 {
     overflow: hidden;
     left: -10000px;
 }
-
-/*body 95% van schermgrootte gecentreerd*/
-body {
-    margin: 0 auto;
-    width: 95%;
-}
-
 
 /*Dots van ul elementen weghalen*/
 ul  {
@@ -46,6 +43,16 @@ ul  {
 footer {
     clear: both; /*geen floating elementen langs beiden kanten*/
 }
+
+/*------------------------------------------------------*/
+/*Bread crumbs*/
+/*------------------------------------------------------*/
+nav ul {
+    display: flex;
+    flex-direction: column;
+    : ;
+}
+
 
 
 /*------------------------------------------------------*/
@@ -183,6 +190,9 @@ footer {
 
 /*Algemene grid toegpast op body*/
 .grid {
+    margin: 0 auto;
+    width: 95%; /*body 95% van schermgrootte gecentreerd*/
+
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
@@ -197,7 +207,7 @@ footer {
 }
 
 /*Apart grid voor main van home pagina*/
-.grid > .grid_mainHome {
+.grid > .grid_main {
     display: flex; /*De main is een flexbox*/
     flex-direction: row-reverse; /*Testimonials links*/
     grid-area: gmainhome;
@@ -206,19 +216,19 @@ footer {
 }
 
 /*About is een article met daarbinnen secties*/
-.grid_mainHome article  {
+.grid_main article  {
     display: flex;
     flex-direction: column;
 
 }
 /*testimonial link is een section volgens wireframe*/
-.grid_mainHome section  {
+.grid_main section  {
     display: flex;
     flex-direction: column;
 
 }
 /*About is een article met daarbinnen secties*/
-.grid_mainHome article > section {
+.grid_main article > section {
     display: flex;
     flex: 1;
     flex-wrap: wrap; /*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*/
@@ -227,7 +237,7 @@ footer {
 
 
 /*H3 100% van de ruimte laten innemen*/
-.grid_mainHome article H3 {
+.grid_main article H3 {
     flex: 1 0 100%;
 }
 
