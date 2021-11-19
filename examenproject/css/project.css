@@ -50,7 +50,6 @@ footer {
 nav ul {
     display: flex;
     flex-direction: column;
-    : ;
 }
 
 
@@ -60,7 +59,7 @@ nav ul {
 /*------------------------------------------------------*/
 
 /*Opmaak hyperlinks menu*/
-.grid_menu ul a {
+.header_menu ul a {
     text-transform: uppercase; /*alle tekst van de links naar hoofdletters*/
     text-decoration: none; /*Lijnen onder links*/
     padding: 0.75em 1em; /*opvullen beschikbare ruimte*/
@@ -70,33 +69,33 @@ nav ul {
 
 
 /*Menu items flexbox*/
-.grid_menu ul {
+.header_menu ul {
     display: flex;
 }
 
 /*Maak eerste niveau flex items in de rij richting*/
-.grid_menu > ul {
+.header_menu > ul {
     flex-direction: row; /*Default*/
 }
 
 /*Maak tweede niveau flex items in de kolom richting*/
-.grid_menu ul ul {
+.header_menu ul ul {
     flex-direction: column;
     /*margin-left: -40px;*/
 }
 
 /*Ruimte breedte opvullen*/
-.grid_menu > ul > li {
+.header_menu > ul > li {
     flex-grow: 1;
 }
 
 /* Sub-menu als overflow, anker voor submenus*/
-.grid_menu > ul > .submenu{
+.header_menu > ul > .submenu{
     position: relative;
 }
 
 
-.grid_menu .submenu > ul {
+.header_menu .submenu > ul {
     /*Transitie om sub-menu items te kunnen selecteren*/
     overflow-y: hidden; /*default is visible*/
     max-height: 0; /*element groeien tot nodige aantal pix*/
@@ -106,31 +105,31 @@ nav ul {
     padding: 0; /*Aligneer aan bovenliggende menu*/
 }
 
-.grid_menu .submenu:hover > ul {
+.header_menu .submenu:hover > ul {
     /*Transitie om sub-menu items te kunnen selecteren*/
     max-height: 350px; /*element groeien tot nodige aantal pix, zodat er geen overflow meer is dus alles zichtbaar kan worden*/
     transition: max-height 1s ease-in 0.2s;
 }
 
 /*Kleur eerste niveau menu*/
-.grid_menu > ul a {
+.header_menu > ul a {
     background: #1565C0;
     color: white;
 }
 
 /*Kleur tweede niveau menu*/
-.grid_menu .submenu > ul a {
+.header_menu .submenu > ul a {
     background: lightblue;
     color: blue;
 }
 
 /*Link met submenu voorzien van +teken*/
-.grid_menu .submenu > a:after {
+.header_menu .submenu > a:after {
     content: '+';
     padding-left: 5px;
 }
 /* Links hover algemeen*/
-.grid_menu  > ul a:hover, .menu .submenu > ul a:hover {
+.header_menu  > ul a:hover, .menu .submenu > ul a:hover {
     background: aliceblue;
     color: blue;
 }
@@ -141,7 +140,8 @@ nav ul {
 /*Header voor alle paginas*/
 /*------------------------------------------------------*/
 
-.grid_header {
+/*De header is als grid container gededineerd, is zelf een grid item binnen de body grid*/
+.header_grid {
     display: grid;
     grid-area: gheader;
     background-color: orange;
@@ -153,12 +153,12 @@ nav ul {
     column-gap: 15px;
 }
 
-.grid_logo {
+.header_logo {
     grid-area: logo;
     align-self: center;
 }
 
-.grid_paginatitel {
+.header_paginatitel {
     font-size: 1em;
     color: blue;
     font-style: italic;
@@ -167,7 +167,7 @@ nav ul {
     align-self: center;
 }
 
-.grid_menu {
+.header_menu {
     grid-area: menu;
     align-self: center;
 }
@@ -189,7 +189,7 @@ nav ul {
 }
 
 /*Algemene grid toegpast op body*/
-.grid {
+.body_grid {
     margin: 0 auto;
     width: 95%; /*body 95% van schermgrootte gecentreerd*/
 
@@ -207,7 +207,7 @@ nav ul {
 }
 
 /*Apart grid voor main van home pagina*/
-.grid > .grid_main {
+.body_grid > .main {
     display: flex; /*De main is een flexbox*/
     flex-direction: row-reverse; /*Testimonials links*/
     grid-area: gmainhome;
@@ -216,19 +216,19 @@ nav ul {
 }
 
 /*About is een article met daarbinnen secties*/
-.grid_main article  {
+.main article  {
     display: flex;
     flex-direction: column;
 
 }
 /*testimonial link is een section volgens wireframe*/
-.grid_main section  {
+.main section  {
     display: flex;
     flex-direction: column;
 
 }
 /*About is een article met daarbinnen secties*/
-.grid_main article > section {
+.main article > section {
     display: flex;
     flex: 1;
     flex-wrap: wrap; /*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*/
@@ -237,32 +237,60 @@ nav ul {
 
 
 /*H3 100% van de ruimte laten innemen*/
-.grid_main article H3 {
+.main article H3 {
     flex: 1 0 100%;
 }
 
 /************footer************/
-.grid_footer {
+/*De footer grid is een grid element binnen de body grid*/
+.footer {
+    border: solid;
     grid-area: gfooter;
     background-color: green;
-    display: flex;
-    column-gap: 100px;
-    clear: both;
+    display: flex; /* Is een flexbox*/
+    column-gap: 100px; /*Afstand tussen de kolomen binnen de flexbox*/
+    clear: both; /*geen floating element langs beide kanten*/
+    justify-content: space-around;
 }
 
-.social_media  ul{
+.footer .footer_socialmedia {
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row; /*default*/
+    width: 100%;
+    justify-content: space-around;
+}
+
+.footer .footer_socialmedia ul{
+    display: flex;
+    /*flex-direction: row; /*default*/
     align-self: center;
     width: 100%;
+    justify-content: space-around;
 }
 
-.social_media ul li {
-    flex-grow: 1;
+
+
+.footer_contact {
+    display: flex;
+    /*flex-direction: row; /*default*/
+    width: 100%;
+    justify-content: space-around;
+    flex-flow: row wrap;
+
 }
 
-.grid_footer h2 {
+.footer_contact ul{
+    display: flex;
+    /*flex-direction: row; /*default*/
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.footer h2 {
     flex: 1 0 100%;
+    text-align: center;
 }
 
 
