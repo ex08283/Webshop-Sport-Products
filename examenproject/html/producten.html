@@ -7,205 +7,238 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/project.css">
 </head>
-<body>
-<header>
-    <h1>Producten overzicht</h1>
-    <img src="../media/fotos/logo_reresized.png" alt="logo" usemap="#map">
+<body class="body_grid">
+<header class="header_grid">
+    <!-- navigatie -->
+    <h1 class="hiddenTitle">Producten overzicht</h1>
+    <img class="header_logo" src="../media/fotos/logo_reresized.png" alt="logo" usemap="#map">
     <map name="map" id="map">
         <area alt="website logo" href="../index.html" shape="rect" coords="2,3,196,130">
     </map>
-    <p class="paginatitel">Fitness Freaks</p>
-
-    <nav>
-        <h2>Menu</h2>
+    <p class="header_paginatitel">Fitness Freaks</p>
+    <nav class="header_menu">
+        <h2 class="hiddenTitle">Menu</h2>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../html/producten.html">Producten</a>
+            <li class="submenu"><a href="../html/producten.html">Producten</a>
                 <ul>
-                    <li><a href="../html/producten.html#kettlebells">KETTLEBELLS</a></li>
-                    <li><a href="../html/producten.html#fitnessmatten">FITNESS MATTEN</a></li>
-                    <li><a href="../html/producten.html#weerstandsbanden">WEERSTANDSBANDEN</a></li>
+                    <li><a href="../html/producten.html#kettlebells">Kettlebells</a></li>
+                    <li><a href="../html/producten.html#fitnessmatten">Fitness Matten</a></li>
+                    <li><a href="../html/producten.html#weerstandsbanden">Weerstandbanden</a></li>
                 </ul>
             </li>
             <li><a href="../html/contacten.html">Contact</a></li>
             <li><a href="../html/faq.html">FAQ</a></li>
         </ul>
     </nav>
-    <nav>
-        <h2>Breadcrumb navigatie</h2>
-
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-<!--            <li><a href="#">Pictures</a></li>-->
-<!--            <li><a href="#">Summer 15</a></li>-->
-            <li>Producten</li>
-        </ul>
-    </nav>
 </header>
-<main>
-    <article>
-        <h2>All producten overzicht</h2>
-        <section>
+<main class="main">
+    <article class="producten_grid">
+        <h2 class="hiddenTitle">All producten overzicht</h2>
+        <input type="checkbox" name="merk" id="reebok" value="REEBOK">
+        <input type="checkbox" name="merk" id="domyos" value="DOMYOS">
+        <input type="checkbox" name="merk" id="nyamba" value="NYAMBA">
+        <input type="checkbox" id="benlee" value="BENLEE">
+        <input type="checkbox" id="gymstick" value="GYMSTICK">
+        <input type="checkbox" id="matchu sports" value="MATCHU SPORTS">
+        <input type="checkbox" id="toorx akca" value="TOORX AKCA">
+        <input type="checkbox" id="muscle power" value="MUSCLE POWER">
+        <input type="checkbox" id="virtufit" value="VIRTUFIT">
+        <input type="checkbox" id="blackroll" value="BLACKROLL">
+        <input type="checkbox" id="tunturi" value="TUNTURI">
+        <input type="checkbox" id="merkloos" value="MERKLOOS">
+        <input type="checkbox" id="alles" value="ALLES">
+        <section class="producten_filter">
             <h3>Toepast Filter</h3>
             <section>
-                <h4>Merk</h4>
-                <fieldset>
+                <h4 class="hiddenTitle">Merk</h4>
+                <fieldset id="filter">
                     <legend>Merk</legend>
-                    <input type="radio" name="merk" id="reebok" value="REEBOK">
                     <label for="reebok">REEBOK</label>
-                    <input type="radio" name="merk" id="domyos" value="DOMYOS">
                     <label for="domyos">DOMYOS</label>
-                    <input type="radio" name="merk" id="nyamba" value="NYAMBA">
                     <label for="nyamba">NYAMBA</label>
+                    <label for="benlee">BENLEE</label>
+                    <label for="gymstick">GYMSTICK</label>
+                    <label for="matchu sports">MATCHU SPORTS</label>
+                    <label for="toorx akca">TOORX AKCA</label>
+                    <label for="muscle power">MUCSLE POWER</label>
+                    <label for="virtufit">VIRTUFIT</label>
+                    <label for="blackroll">BLACKROLL</label>
+                    <label for="tunturi">TUNTURI</label>
+                    <label for="merkloos">MERKLOOS</label>
+                    <label for="alles">ALLES</label>
                 </fieldset>
             </section>
-            <section>
-                <h4>Type</h4>
-                <fieldset>
-                    <legend>Type</legend>
-                    <input type="radio" name="merk" id="elastiek" value="elastiek">
-                    <label for="elastiek">Elastiek</label>
-                    <input type="radio" name="merk" id="kruisbeschermer" value="kruisbeschermer">
-                    <label for="kruisbeschermer">Kruisbeschermer</label>
-                    <input type="radio" name="merk" id="suspension_trap" value="suspension_trap">
-                    <label for="suspension_trap">Suspension trap</label>
-                </fieldset>
-            </section>
+<!--            <section>-->
+<!--                <h4 class="hiddenTitle">Type</h4>-->
+<!--                <fieldset>-->
+<!--                    <legend>Type</legend>-->
+<!--                    <input type="radio" name="merk" id="elastiek" value="elastiek">-->
+<!--                    <label for="elastiek">Elastiek</label>-->
+<!--                    <input type="radio" name="merk" id="kruisbeschermer" value="kruisbeschermer">-->
+<!--                    <label for="kruisbeschermer">Kruisbeschermer</label>-->
+<!--                    <input type="radio" name="merk" id="suspension_trap" value="suspension_trap">-->
+<!--                    <label for="suspension_trap">Suspension trap</label>-->
+<!--                </fieldset>-->
+<!--            </section>-->
         </section>
-        <section>
-            <h3>Product Catergorien</h3>
+        <section class="producten_overzicht" id="fotos">
+            <h3 class="hiddenTitle">Product Catergorien</h3>
             <section>
                 <h4 id="kettlebells">Kettlebells</h4>
-                <section>
+                <section data-filter="alles benlee">
                     <h5>BENLEE KETTLEBELL 3 KG ROZE</h5>
-                    <a href="Productdetail/kettlebell_3_kg_roze.html"><img src="../media/fotos/productlogos/kettlebells/BENLEE_3KG_ROZE.png" alt="BENLEE_3KG_ROZE"></a>
+                    <a href="Productdetail/kettlebell_3_kg_roze.html">
+                        <img class="foto_schaling"
+                             src="../media/fotos/productlogos/kettlebells/BENLEE_3KG_ROZE.png" alt="BENLEE_3KG_ROZE"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles domyos">
                     <h5>DOMYOS KETTLEBELL 8 KG</h5>
-                    <a href="Productdetail/DOMYOS_KETTLEBELL_8KG.html"><img src="../media/fotos/productlogos/kettlebells/DOMYOS_8KG.png" alt="DOMYOS_8KG"></a>
+                    <a href="Productdetail/DOMYOS_KETTLEBELL_8KG.html">
+                        <img class="foto_schaling" src="../media/fotos/productlogos/kettlebells/DOMYOS_8KG.png" alt="DOMYOS_8KG"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles gymstick">
                     <h5>GYMSTICK PRO KETTLEBELL ZWART 4 KG</h5>
-                    <a href="Productdetail/GYMSTICK_PRO_KETTLEBELL_ZWART4KG.html"><img src="../media/fotos/productlogos/kettlebells/GYMSTICK_ZWART_4KG.png" alt="GYMSTICK_ZWART_4KG"></a>
+                    <a href="Productdetail/GYMSTICK_PRO_KETTLEBELL_ZWART4KG.html">
+                        <img class="foto_schaling"
+                             src="../media/fotos/productlogos/kettlebells/GYMSTICK_ZWART_4KG.png" alt="GYMSTICK_ZWART_4KG"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles matchu sports">
                     <h5>MATCHU SPORTS - ZWART - KETTLEBELL - 4KG - KUNSTSTOF</h5>
-                    <img src="../media/fotos/productlogos/kettlebells/MATCHU_SPORTS_4KG_KUNSTSTOF.png" alt="MATCHU_SPORTS_4KG_KUNSTSTOF">
-                    <p>€ 20.595</p>
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/kettlebells/MATCHU_SPORTS_4KG_KUNSTSTOF.png" alt="MATCHU_SPORTS_4KG_KUNSTSTOF">
+                    <p>€ 20.59</p>
                 </section>
-                <section>
+                <section data-filter="alles toorx akca">
                     <h5>TOORX AKCA STEEL COMPETITION KETTLEBELL - STAAL - 12 KG</h5>
-                    <img src="../media/fotos/productlogos/kettlebells/TOORX_STAAL_12KG.png" alt="TOORX_STAAL_12KG">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/kettlebells/TOORX_STAAL_12KG.png" alt="TOORX_STAAL_12KG">
                     <p>€ 20.95</p>
                 </section>
-                <section>
-                    <h5>YMSTICK PRO KETTLEBELL - ZWART  - 10 KG</h5>
-                    <img src="../media/fotos/productlogos/kettlebells/GYMSTICK_10_KG.png" alt="GYMSTICK_10_KG">
+                <section data-filter="alles gymstick">
+                    <h5>GYMSTICK PRO KETTLEBELL - ZWART  - 10 KG</h5>
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/kettlebells/GYMSTICK_10_KG.png" alt="GYMSTICK_10_KG">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles muscle power">
                     <h5>MUSCLE POWER RUBBEREN KETTLEBELL - ZWART - 24 KG</h5>
-                    <img src="../media/fotos/productlogos/kettlebells/MUSCLE_POWERMUSCLE_RUBBEREN_24KG.png" alt="MUSCLE_POWERMUSCLE_RUBBEREN_24KG">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/kettlebells/MUSCLE_POWERMUSCLE_RUBBEREN_24KG.png" alt="MUSCLE_POWERMUSCLE_RUBBEREN_24KG">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles virtufit">
                     <h5>VIRTUFIT KETTLEBELL PRO - GIETIJZER - 10 KG</h5>
-                    <img src="../media/fotos/productlogos/kettlebells/VIRTUFIT_GIETIJZER_10KG.png" alt="VIRTUFIT_GIETIJZER_10KG">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/kettlebells/VIRTUFIT_GIETIJZER_10KG.png" alt="VIRTUFIT_GIETIJZER_10KG">
                     <p>€ 20.95</p>
                 </section>
             </section>
             <section>
                 <h4 id="fitnessmatten">Fitness Matten</h4>
-                <section>
+                <section data-filter="alles YOGAMAT">
                     <h5>YOGAMAT 5 MM ZACHTE YOGA DONKERBLAUW</h5>
-                    <a href="Productdetail/YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW.html"><img src="../media/fotos/productlogos/fitnessmatten/KIMJALI_YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW.png" alt="KIMJALI_YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW"></a>
+                    <a href="Productdetail/YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW.html">
+                        <img class="foto_schaling"
+                             src="../media/fotos/productlogos/fitnessmatten/KIMJALI_YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW.png" alt="KIMJALI_YOGAMAT_5MM_ZACHTE_YOGA_DONKERBLAUW"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles benlee merkloos">
                     <h5>Vloertegel voor kleutergym blauw</h5>
-                    <img src="../media/fotos/productlogos/fitnessmatten/DOMYOS_VLOERTEGEL_VOOR_KLEUTERGYM_BLAUW.png" alt="DOMYOS_VLOERTEGEL_VOOR_KLEUTERGYM_BLAUW">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/fitnessmatten/DOMYOS_VLOERTEGEL_VOOR_KLEUTERGYM_BLAUW.png" alt="DOMYOS_VLOERTEGEL_VOOR_KLEUTERGYM_BLAUW">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles YOGAMAT">
                     <h5>YOGAMAT | 5 MM | DYNAMISCHE YOGA | DONKERGRIJS</h5>
-                    <img src="../media/fotos/productlogos/fitnessmatten/KIMJALY_YOGAMAT_5MM_DYNAMISCHE_YOGA_DONKERGRIJS.png" alt="KIMJALY_YOGAMAT_5MM_DYNAMISCHE_YOGA_DONKERGRIJS">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/fitnessmatten/KIMJALY_YOGAMAT_5MM_DYNAMISCHE_YOGA_DONKERGRIJS.png" alt="KIMJALY_YOGAMAT_5MM_DYNAMISCHE_YOGA_DONKERGRIJS">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles virtufit">
                     <h5>VirtuFit Universele Vloermat - Beschermmat Fitnessapparatuur</h5>
-                    <img src="../media/fotos/productlogos/fitnessmatten/VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR.png" alt="VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/fitnessmatten/VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR.png" alt="VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles merkloos">
                     <h5>Opvouwbare fitnessmat blauw</h5>
-                    <img src="../media/fotos/productlogos/fitnessmatten/OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM.png" alt="OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/fitnessmatten/OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM.png" alt="OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles reebok">
                     <h5>Reebok Vloermat</h5>
-                    <img src="../media/fotos/productlogos/fitnessmatten/REEBOK_VLOETMAT.png" alt="REEBOK_VLOETMAT">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/fitnessmatten/REEBOK_VLOETMAT.png" alt="REEBOK_VLOETMAT">
                     <p>€ 20.95</p>
                 </section>
             </section>
-            <section>
+            <section >
                 <h4 id="weerstandsbanden">Weerstandbanden</h4>
-                <section>
+                <section data-filter="alles blackroll">
                     <h5>BLACKROLL RESIST BAND - Grijs</h5>
-                    <a href="Productdetail/BLACKROLl_RESIST_BAND_Grijs.html"><img src="../media/fotos/productlogos/elastieken/BLACKROLL_RESISTBAND_GRIJS.png" alt="BLACKROLL_RESISTBAND_GRIJS"></a>
+                    <a href="Productdetail/BLACKROLl_RESIST_BAND_Grijs.html">
+                        <img class="foto_schaling"
+                             src="../media/fotos/productlogos/elastieken/BLACKROLL_RESISTBAND_GRIJS.png" alt="BLACKROLL_RESISTBAND_GRIJS"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles merkloos">
                     <h5>Korte weerstandsbanden rubber set van 3 turquoise/bordeaux/zwart</h5>
-                    <img src="../media/fotos/productlogos/elastieken/KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART.png" alt="KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/elastieken/KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART.png" alt="KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles tunturi">
                     <h5>Tunturi Weerstandsbanden Set - Textiel - 3 stuks</h5>
-                    <img src="../media/fotos/productlogos/elastieken/TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS.png" alt="TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/elastieken/TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS.png" alt="TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles matchu sports">
                     <h5> MATCHU - Weerstandsband - Medium</h5>
-                    <img src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_MEDIUM.png" alt="WEERSTANDSBAND_MEDIUM">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_MEDIUM.png" alt="WEERSTANDSBAND_MEDIUM">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles matchu sports">
                     <h5>MATCHU- Weerstandsbanden set - GeelRoodGroenBlauw - Latex</h5>
-                    <img src="../media/fotos/productlogos/elastieken/WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX.png" alt="WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/elastieken/WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX.png" alt="WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX">
                     <p>€ 20.95</p>
                 </section>
-                <section>
+                <section data-filter="alles domyos">
                     <h5>DOMYOS Weerstandsband glute band krachttraining billen hard</h5>
-                    <img src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD.png" alt="WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD">
+                    <img class="foto_schaling"
+                         src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD.png" alt="WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD">
                     <p>€ 20.95</p>
                 </section>
             </section>
-        </section>
-    </article>
-
-    <article>
-        <h2>Contact</h2>
-        <section>
-            <h3>Social Media</h3>
-            <footer>
-                <ul>
-                    <li><a href="https://www.facebook.com"><img src="../media/fotos/fbook_logo.PNG" alt="facebook logo"></a></li>
-                    <li><a href="https://www.facebook.com"><img src="../media/fotos/insta_logo.PNG" alt="instagram logo"></a></li>
-                    <li><a href="https://www.facebook.com"><img src="../media/fotos/ytube_logo.PNG" alt="youtube logo"></a></li>
-                </ul>
-            </footer>
-        </section>
-        <section>
-            <h3>Contact Gegevens</h3>
-            <p>8 Cameron Crescen, Edgware, HA8 0FH</p>
-            <p>Tel: 07811615 </p>
-            <p>E-mail: <a href="mailto:delawar.jalat@student.kdg.be">delawar.jalat@student.kdg.be</a></p>
         </section>
     </article>
 </main>
-
+<footer class="footer">
+    <section class="footer_socialmedia">
+        <h2 class="hiddenTitle">Social Media</h2>
+        <ul>
+            <li><a href="https://www.facebook.com"><img src="../media/fotos/fbook_logo.PNG" alt="facebook logo"></a></li>
+            <li><a href="https://www.facebook.com"><img src="../media/fotos/insta_logo.PNG" alt="instagram logo"></a></li>
+            <li><a href="https://www.facebook.com"><img src="../media/fotos/ytube_logo.PNG" alt="youtube logo"></a></li>
+        </ul>
+    </section>
+    <section class="footer_contact">
+        <h2>Contact Gegevens</h2>
+        <ul>
+            <li>8 Cameron Crescent</li>
+            <li>Edgware</li>
+            <li>HA8 0FH</li>
+            <li>Tel: 07811615 </li>
+            <li>E-mail: <a href="mailto:delawar.jalat@student.kdg.be">delawar.jalat@student.kdg.be</a></li>
+        </ul>
+    </section>
+</footer>
 </body>
 </html>

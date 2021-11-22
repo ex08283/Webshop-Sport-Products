@@ -10,6 +10,7 @@
 
 h1, h2 {
     color: dodgerblue;
+    text-align: center;
 }
 
 h3 {
@@ -40,10 +41,6 @@ ul  {
 >}
 
 
-footer {
-    clear: both; /*geen floating elementen langs beiden kanten*/
-}
-
 /*------------------------------------------------------*/
 /*Bread crumbs*/
 /*------------------------------------------------------*/
@@ -52,7 +49,10 @@ nav ul {
     flex-direction: column;
 }
 
-
+/*H3 100% van de ruimte laten innemen*/
+.main article H3 {
+    flex: 1 0 100%;
+}
 
 /*------------------------------------------------------*/
 /*Menu eigenschappen*/
@@ -66,7 +66,6 @@ nav ul {
     display: block;
     text-align: center; /*centreer text*/
 }
-
 
 /*Menu items flexbox*/
 .header_menu ul {
@@ -134,8 +133,6 @@ nav ul {
     color: blue;
 }
 
-
-
 /*------------------------------------------------------*/
 /*Header voor alle paginas*/
 /*------------------------------------------------------*/
@@ -156,6 +153,7 @@ nav ul {
 .header_logo {
     grid-area: logo;
     align-self: center;
+
 }
 
 .header_paginatitel {
@@ -164,7 +162,7 @@ nav ul {
     font-style: italic;
     text-transform: uppercase;
     grid-area: fitnessfreaks_titel;
-    align-self: center;
+    text-align: center;
 }
 
 .header_menu {
@@ -181,6 +179,7 @@ nav ul {
 .testimonials blockquote {
     font-family: Garamond, serif;
     font-style: italic;
+    text-align: center;
 }
 
 /*Font style van testimonial citaties op home*/
@@ -215,38 +214,186 @@ nav ul {
     flex: 1;
 }
 
-/*About is een article met daarbinnen secties*/
-.main article  {
+/*------------------------------------------------------*/
+/*Producten pagina*/
+/*------------------------------------------------------*/
+/*De article binnen de main bevat de filters ende producten overzcht, en is een grid*/
+.producten_grid {
+    display: grid;
+    grid-template-areas:
+    "filter . overzicht"; /* ruimte tussen de grid items*/
+    grid-template-columns: 20fr 1fr 50fr; /*ruimte indeling filter en prudcten overzicht */
+}
+
+
+.producten_grid > .producten_filter {
+    grid-area: filter;
+}
+
+/*Filters Onder elkaar*/
+.producten_filter fieldset input{
+    display: flex;
+}
+
+.producten_grid > .producten_overzicht {
+    grid-area: overzicht;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.producten_overzicht > section  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
 
 }
-/*testimonial link is een section volgens wireframe*/
-.main section  {
+
+.producten_overzicht section > section {
     display: flex;
     flex-direction: column;
-
-}
-/*About is een article met daarbinnen secties*/
-.main article > section {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap; /*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*/
-    flex-direction: row;
+    text-align: center;
+    border: solid;
+    align-items: center;
 }
 
+.producten_grid h5 {
+    font-size: 0.7em;
+    max-width: 40%;
+}
 
-/*H3 100% van de ruimte laten innemen*/
-.main article H3 {
+.producten_grid h4, .producten_grid h3 {
     flex: 1 0 100%;
+    text-align: center;
 }
+
+/*-------------Filters--------------------------*/
+/*.producten_grid img {*/
+/*    display: none;*/
+/*}*/
+
+/*.producten_grid input {*/
+/*    display: none;*/
+/*}*/
+
+input[value="BENLEE"]:checked ~ #fotos section > section:not([data-filter~="benlee"]),
+input[value="REEBOK"]:checked ~ #fotos section > section:not([data-filter~="reebok"]),
+input[value="DOMYOS"]:checked ~ #fotos section > section:not([data-filter~="domyos"]),
+input[value="NYAMBA"]:checked ~ #fotos section > section:not([data-filter~="nyamba"]),
+input[value="GYMSTICK"]:checked ~ #fotos section > section:not([data-filter~="gymstick"]),
+input[value="MATCHU SPORTS"]:checked ~ #fotos section > section:not([data-filter~="matchu sports"]),
+input[value="TOORX AKCA"]:checked ~ #fotos section > section:not([data-filter~="toorx akca"]),
+input[value="MUSCLE POWER"]:checked ~ #fotos section > section:not([data-filter~="muscle power"]),
+input[value="BLACKROLL"]:checked ~ #fotos section > section:not([data-filter~="blackroll"]),
+input[value="TUNTURI"]:checked ~ #fotos section > section:not([data-filter~="tunturi"]),
+input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="merkloos"]),
+input[value="ALLES"]:checked ~ #fotos section > section:not([data-filter~="alles"])
+{
+    display: none;
+}
+
+#filter label {
+    padding: 0 6px;
+    border: solid 1px grey;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+#filter label:hover{
+    background-color: grey;
+}
+
+input[value="benlee"]:checked ~ filter label[for~="benlee"],
+input[value="reebok"]:checked ~ filter[for~="reebok"],
+input[value="nyamba"]:checked ~ filter[for~="nyamba"],
+input[value="domyos"]:checked ~ filter[for~="domyos"],
+input[value="matchu sports"]:checked ~ filter[for~="matchu sports"],
+input[value="toorx akca"]:checked ~ filter[for~="toorx akca"],
+input[value="muscle powet"]:checked ~ filter[for~="muscle power"],
+input[value="virtufit"]:checked ~ filter[for~="virtufit"],
+input[value="blackroll"]:checked ~ filter[for~="blackroll"],
+input[value="tunturi"]:checked ~ filter[for~="tunturi"],
+input[value="merkloos"]:checked ~ filter[for~="merkloos"],
+input[value="alles"]:checked ~ filter[for~="alles"],
+input[value="gymstick"]:checked ~ filter[for~="gymstick"]
+{
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+/*------------------------------------------------------*/
+/*Contact*/
+/*------------------------------------------------------*/
+
+.main_contact article{
+    display: grid;
+    grid-template-areas:
+            "cfoto cfoto"
+            "kaart form";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 10px;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.main_contact .contact_locatie {
+    grid-area: kaart;
+}
+
+.main_contact .contact_locatie iframe {
+    border: solid;
+}
+
+.main_contact .contact_foto {
+    grid-area: cfoto;
+}
+
+.main_contact .contact_form{
+    grid-area: form;
+}
+
+.main_contact ul li{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+/*
+/*!*!*Artikels in de main zijn een flexbox About is een article met daarbinnen secties*!*!*/
+/*.main article  {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+
+/*}*/
+/*!*testimonial link is een section volgens wireframe*!*/
+/*.main section  {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+
+/*}*/
+/*!*About is een article met daarbinnen secties*!*/
+/*.main article > section {*/
+/*    display: flex;*/
+/*    flex: 1;*/
+/*    flex-wrap: wrap; !*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*!*/
+/*    flex-direction: row;*/
+/*}*/
+
+
+
 
 /************footer************/
 /*De footer grid is een grid element binnen de body grid*/
 .footer {
     border: solid;
     grid-area: gfooter;
-    background-color: green;
     display: flex; /* Is een flexbox*/
     column-gap: 100px; /*Afstand tussen de kolomen binnen de flexbox*/
     clear: both; /*geen floating element langs beide kanten*/
