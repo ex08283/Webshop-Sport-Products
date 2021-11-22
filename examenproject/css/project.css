@@ -280,15 +280,15 @@ nav ul {
 input[value="BENLEE"]:checked ~ #fotos section > section:not([data-filter~="benlee"]),
 input[value="REEBOK"]:checked ~ #fotos section > section:not([data-filter~="reebok"]),
 input[value="DOMYOS"]:checked ~ #fotos section > section:not([data-filter~="domyos"]),
-input[value="NYAMBA"]:checked ~ #fotos section > section:not([data-filter~="nyamba"]),
+input[value="yogamat"]:checked ~ #fotos section > section:not([data-filter~="yogamat"]),
+input[value="VIRTUFIT"]:checked ~ #fotos section > section:not([data-filter~="virtufit"]),
 input[value="GYMSTICK"]:checked ~ #fotos section > section:not([data-filter~="gymstick"]),
-input[value="MATCHU SPORTS"]:checked ~ #fotos section > section:not([data-filter~="matchu sports"]),
-input[value="TOORX AKCA"]:checked ~ #fotos section > section:not([data-filter~="toorx akca"]),
-input[value="MUSCLE POWER"]:checked ~ #fotos section > section:not([data-filter~="muscle power"]),
+input[value="MATCHU"]:checked ~ #fotos section > section:not([data-filter~="matchu"]),
+input[value="TOORX"]:checked ~ #fotos section > section:not([data-filter~="toorx"]),
+input[value="MUSCLE"]:checked ~ #fotos section > section:not([data-filter~="muscle"]),
 input[value="BLACKROLL"]:checked ~ #fotos section > section:not([data-filter~="blackroll"]),
 input[value="TUNTURI"]:checked ~ #fotos section > section:not([data-filter~="tunturi"]),
-input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="merkloos"]),
-input[value="ALLES"]:checked ~ #fotos section > section:not([data-filter~="alles"])
+input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="merkloos"])
 {
     display: none;
 }
@@ -304,19 +304,18 @@ input[value="ALLES"]:checked ~ #fotos section > section:not([data-filter~="alles
     background-color: grey;
 }
 
-input[value="benlee"]:checked ~ filter label[for~="benlee"],
-input[value="reebok"]:checked ~ filter[for~="reebok"],
-input[value="nyamba"]:checked ~ filter[for~="nyamba"],
-input[value="domyos"]:checked ~ filter[for~="domyos"],
-input[value="matchu sports"]:checked ~ filter[for~="matchu sports"],
-input[value="toorx akca"]:checked ~ filter[for~="toorx akca"],
-input[value="muscle powet"]:checked ~ filter[for~="muscle power"],
-input[value="virtufit"]:checked ~ filter[for~="virtufit"],
-input[value="blackroll"]:checked ~ filter[for~="blackroll"],
-input[value="tunturi"]:checked ~ filter[for~="tunturi"],
-input[value="merkloos"]:checked ~ filter[for~="merkloos"],
-input[value="alles"]:checked ~ filter[for~="alles"],
-input[value="gymstick"]:checked ~ filter[for~="gymstick"]
+input[value="BENLEE"]:checked ~ filter label[for~="benlee"],
+input[value="REEBOK"]:checked ~ filter label[for~="reebok"],
+input[value="YOGAMAT"]:checked ~ filter label[for~="yogamat"],
+input[value="DOMYOS"]:checked ~ filter label[for~="domyos"],
+input[value="matchu"]:checked ~ filter label[for~="matchu"],
+input[value="TOORX"]:checked ~ filter label[for~="toorx"],
+input[value="MUSLE"]:checked ~ filter label[for~="muscle"],
+input[value="VIRTUFIT"]:checked ~ filter label[for~="virtufit"],
+input[value="BLACKROLL"]:checked ~ filter label[for~="blackroll"],
+input[value="TUNTURI"]:checked ~ filter label[for~="tunturi"],
+input[value="MERKLOOS"]:checked ~ filter label[for~="merkloos"],
+input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
 {
     background-color: black;
     color: white;
