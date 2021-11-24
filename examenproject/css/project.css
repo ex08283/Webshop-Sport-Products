@@ -211,7 +211,9 @@ nav ul {
     flex-direction: row-reverse; /*Testimonials links*/
     grid-area: gmainhome;
     background-color: blue;
-    flex: 1;
+    /*flex-grow: 1;*/
+    /*justify-items: stretch;*/
+    /*justify-self: stretch;*/
 }
 
 /*------------------------------------------------------*/
@@ -223,6 +225,9 @@ nav ul {
     grid-template-areas:
     "filter . overzicht"; /* ruimte tussen de grid items*/
     grid-template-columns: 20fr 1fr 50fr; /*ruimte indeling filter en prudcten overzicht */
+    /*max-width: 100%;*/
+    /*justify-self: stretch;*/
+    /*grid-row: 1;*/
 }
 
 
@@ -231,7 +236,7 @@ nav ul {
 }
 
 /*Filters Onder elkaar*/
-.producten_filter fieldset input{
+.producten_filter fieldset label{
     display: flex;
 }
 
@@ -273,9 +278,9 @@ nav ul {
 /*    display: none;*/
 /*}*/
 
-/*.producten_grid input {*/
-/*    display: none;*/
-/*}*/
+.producten_grid input {
+    display: none;
+}
 
 input[value="BENLEE"]:checked ~ #fotos section > section:not([data-filter~="benlee"]),
 input[value="REEBOK"]:checked ~ #fotos section > section:not([data-filter~="reebok"]),
@@ -303,6 +308,8 @@ input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="me
 #filter label:hover{
     background-color: grey;
 }
+
+
 
 input[value="BENLEE"]:checked ~ filter label[for~="benlee"],
 input[value="REEBOK"]:checked ~ filter label[for~="reebok"],
