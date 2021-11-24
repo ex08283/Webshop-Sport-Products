@@ -41,13 +41,6 @@ ul  {
 >}
 
 
-/*------------------------------------------------------*/
-/*Bread crumbs*/
-/*------------------------------------------------------*/
-nav ul {
-    display: flex;
-    flex-direction: column;
-}
 
 /*H3 100% van de ruimte laten innemen*/
 .main article H3 {
@@ -142,12 +135,32 @@ nav ul {
     display: grid;
     grid-area: gheader;
     background-color: orange;
-    grid-template-areas: 'logo  menu'
-                         'fitnessfreaks_titel .';
+    grid-template-areas: "logo  menu"
+                         "fitnessfreaks_titel ."
+                         "breadcrumb breadcrumb";
     grid-auto-columns: 1fr 25fr;
-    grid-auto-rows: 10fr 10fr;
+    grid-auto-rows: auto;
     max-height:5%;
-    column-gap: 15px;
+    column-gap: 5px;
+}
+
+/*Bread crumbs*/
+.breadcrumb ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.breadcrumb ul li > a:after {
+    content: '>';
+    padding-left: 5px;
+}
+
+.breadcrumb ul  a {
+    text-decoration: none;
+}
+
+.breadcrumb {
+    grid-area: breadcrumb;
 }
 
 .header_logo {
@@ -203,6 +216,7 @@ nav ul {
     /*Scherm opvullen bij weinig inhoud*/
     height: 97vh; /*vertikale scrollbar voorkomen*/
     max-width: 97vw;
+    justify-self: stretch;
 }
 
 /*Apart grid voor main van home pagina*/
@@ -211,10 +225,81 @@ nav ul {
     flex-direction: row-reverse; /*Testimonials links*/
     grid-area: gmainhome;
     background-color: blue;
-    /*flex-grow: 1;*/
-    /*justify-items: stretch;*/
-    /*justify-self: stretch;*/
 }
+
+/*
+/*Artikels in de main zijn een flexbox About is een article met daarbinnen secties*/
+.main .home_article  {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/*Artikels in de main zijn een flexbox About is een article met daarbinnen secties*/
+.main .home_article section p {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+/*testimonial link is een section volgens wireframe*/
+.main .testimonials  {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+/*About is een article met daarbinnen secties*/
+.main .home_article > section {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap; /*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*/
+}
+
+
+/*------------------------------------------------------*/
+/*Product detail*/
+/*------------------------------------------------------*/
+
+.productdetail_article{
+    display: grid;
+    grid-template-areas:
+            "producttitel producttitel"
+            "foto eigenschappen"
+            "omschrijving omschrijving";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.productdetail_article h2{
+    grid-area: producttitel;
+}
+
+.productdetail_article figure {
+    grid-area: foto;
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.productdetail_article .eigenschappen {
+    grid-area: eigenschappen;
+}
+.productdetail_article .omschrijving {
+    grid-area: omschrijving;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.productdetail_article figure figcaption {
+    font-size: 2em;
+}
+
+
+
+
 
 /*------------------------------------------------------*/
 /*Producten pagina*/
@@ -225,9 +310,7 @@ nav ul {
     grid-template-areas:
     "filter . overzicht"; /* ruimte tussen de grid items*/
     grid-template-columns: 20fr 1fr 50fr; /*ruimte indeling filter en prudcten overzicht */
-    /*max-width: 100%;*/
-    /*justify-self: stretch;*/
-    /*grid-row: 1;*/
+    width: 100%;
 }
 
 
@@ -251,7 +334,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
 
 }
 
@@ -278,9 +361,9 @@ nav ul {
 /*    display: none;*/
 /*}*/
 
-.producten_grid input {
-    display: none;
-}
+/*.producten_grid input {*/
+/*    display: none;*/
+/*}*/
 
 input[value="BENLEE"]:checked ~ #fotos section > section:not([data-filter~="benlee"]),
 input[value="REEBOK"]:checked ~ #fotos section > section:not([data-filter~="reebok"]),
@@ -336,7 +419,7 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
 /*Contact*/
 /*------------------------------------------------------*/
 
-.main_contact article{
+.contact_main article{
     display: grid;
     grid-template-areas:
             "cfoto cfoto"
@@ -348,49 +431,29 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
     align-items: center;
 }
 
-.main_contact .contact_locatie {
+.contact_main .contact_locatie {
     grid-area: kaart;
 }
 
-.main_contact .contact_locatie iframe {
+.contact_main .contact_locatie iframe {
     border: solid;
 }
 
-.main_contact .contact_foto {
+.contact_main .contact_foto {
     grid-area: cfoto;
 }
 
-.main_contact .contact_form{
+.contact_main .contact_form{
     grid-area: form;
+    justify-items: stretch;
 }
 
-.main_contact ul li{
+.contact_main ul li{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-
-/*
-/*!*!*Artikels in de main zijn een flexbox About is een article met daarbinnen secties*!*!*/
-/*.main article  {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*}*/
-/*!*testimonial link is een section volgens wireframe*!*/
-/*.main section  {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*}*/
-/*!*About is een article met daarbinnen secties*!*/
-/*.main article > section {*/
-/*    display: flex;*/
-/*    flex: 1;*/
-/*    flex-wrap: wrap; !*text onder H3 onder H3 plaatsen, contained eigenschap aanpassen*!*/
-/*    flex-direction: row;*/
-/*}*/
 
 
 
