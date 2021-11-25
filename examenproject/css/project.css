@@ -261,6 +261,7 @@ ul  {
 /*Product detail*/
 /*------------------------------------------------------*/
 
+
 .productdetail_article{
     display: grid;
     grid-template-areas:
@@ -269,6 +270,8 @@ ul  {
             "omschrijving omschrijving";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    flex: 1;
+
 }
 
 .productdetail_article h2{
@@ -286,6 +289,9 @@ ul  {
 
 .productdetail_article .eigenschappen {
     grid-area: eigenschappen;
+    border-radius: 5px;
+    border: solid;
+    font-size: 1em;
 }
 .productdetail_article .omschrijving {
     grid-area: omschrijving;
