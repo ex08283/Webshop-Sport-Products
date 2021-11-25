@@ -450,6 +450,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     grid-template-rows: 1fr 1fr;
     column-gap: 10px;
     align-items: center;
+    justify-items: center;
 }
 
 /*grid item*/
@@ -470,6 +471,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 .contact_main .contact_form{
     grid-area: form;
     justify-items: stretch;
+    width: 100%;
 }
 /* contac form elemneten structuren in ene flex box*/
 .contact_main ul li{
