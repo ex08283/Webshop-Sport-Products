@@ -479,7 +479,6 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     flex-direction: column;
 }
 
-
 /************footer************/
 /*De footer grid is een grid element binnen de body grid*/
 .footer {
