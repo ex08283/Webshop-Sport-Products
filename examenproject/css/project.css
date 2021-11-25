@@ -144,31 +144,13 @@ ul  {
     column-gap: 5px;
 }
 
-/*Bread crumbs*/
-.breadcrumb ul {
-    display: flex;
-    flex-direction: row;
-}
-
-.breadcrumb ul li > a:after {
-    content: '>';
-    padding-left: 5px;
-}
-
-.breadcrumb ul  a {
-    text-decoration: none;
-}
-
-.breadcrumb {
-    grid-area: breadcrumb;
-}
-
+/* Header logo is een item binnen de header grid*/
 .header_logo {
     grid-area: logo;
     align-self: center;
 
 }
-
+/*font van de pagina titel*/
 .header_paginatitel {
     font-size: 1em;
     color: blue;
@@ -178,11 +160,34 @@ ul  {
     text-align: center;
 }
 
+/* Is een grid item binnen de header*/
 .header_menu {
     grid-area: menu;
     align-self: center;
 }
 
+
+/*Bread crumbs*/
+.breadcrumb ul {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Plaats een > teken na een anchor*/
+.breadcrumb ul li > a:after {
+    content: '>';
+    padding-left: 5px;
+}
+
+/*haal streepje onder anchor weg van li elementen*/
+.breadcrumb ul  a {
+    text-decoration: none;
+}
+
+/*breadcrumb is een item binnen de header grid*/
+.breadcrumb {
+    grid-area: breadcrumb;
+}
 
 /*------------------------------------------------------*/
 /*Home pagina*/
@@ -261,7 +266,7 @@ ul  {
 /*Product detail*/
 /*------------------------------------------------------*/
 
-
+/*Article in de main van product detail pagina is een grid met items*/
 .productdetail_article{
     display: grid;
     grid-template-areas:
@@ -273,32 +278,35 @@ ul  {
     flex: 1;
 
 }
-
+/*H2 is de product titel en grid item binnen de article*/
 .productdetail_article h2{
     grid-area: producttitel;
 }
 
+/*Product afbeelding is een grid item binnen de  bovenliggende article */
 .productdetail_article figure {
     grid-area: foto;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column wrap; /*prijs onder foto*/
     text-align: center;
-    align-items: stretch;
-    justify-content: stretch;
 }
 
+/*Eigenschappen is een grid item binnen article erboven*/
 .productdetail_article .eigenschappen {
     grid-area: eigenschappen;
     border-radius: 5px;
     border: solid;
     font-size: 1em;
 }
+
+/*Omschrijving is een grid item binnen article erboven*/
 .productdetail_article .omschrijving {
     grid-area: omschrijving;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /*/onder elkaar  plaatsen van alineas*/
 }
 
+/*Prijs font groter maken*/
 .productdetail_article figure figcaption {
     font-size: 2em;
 }
@@ -319,7 +327,7 @@ ul  {
     width: 100%;
 }
 
-
+/*De filter is een grid element van article producten_grid*/
 .producten_grid > .producten_filter {
     grid-area: filter;
 }
@@ -329,35 +337,38 @@ ul  {
     display: flex;
 }
 
+/*product categorien onder elkaar*/
 .producten_grid > .producten_overzicht {
     grid-area: overzicht;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
 
+}
+/*producten binnen product categorien positioneren*/
 .producten_overzicht > section  {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /*flex-grow: 1;*/
+    flex-wrap: wrap; /*producten onder de product category titel */
+    justify-content: center; /*producten secties opeenvolgend achter elkaar links */
+    column-gap: 10px;/* ruimte tussen producten */
+    row-gap: 10px;
 
 }
-
+/*product details positioneren*/
 .producten_overzicht section > section {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* product eigenschappen onder elkaar */
     text-align: center;
     border: solid;
-    align-items: center;
+    align-items: center; /*centreer product eigenschappen*/
 }
-
+/*Product titel font */
 .producten_grid h5 {
     font-size: 0.7em;
     max-width: 40%;
 }
 
-.producten_grid h4, .producten_grid h3 {
+/*Product categorien font aanpassen*/
+.producten_grid h4 {
     flex: 1 0 100%;
     text-align: center;
 }
@@ -367,14 +378,16 @@ ul  {
 /*    display: none;*/
 /*}*/
 
-/*.producten_grid input {*/
-/*    display: none;*/
-/*}*/
+/*verberg input chekc boxen*/
+.producten_grid input {
+    display: none;
+}
 
+/*Verberg wat niet aangeklikt is, ander toon alles*/
 input[value="BENLEE"]:checked ~ #fotos section > section:not([data-filter~="benlee"]),
 input[value="REEBOK"]:checked ~ #fotos section > section:not([data-filter~="reebok"]),
 input[value="DOMYOS"]:checked ~ #fotos section > section:not([data-filter~="domyos"]),
-input[value="yogamat"]:checked ~ #fotos section > section:not([data-filter~="yogamat"]),
+input[value="YOGAMAT"]:checked ~ #fotos section > section:not([data-filter~="yogamat"]),
 input[value="VIRTUFIT"]:checked ~ #fotos section > section:not([data-filter~="virtufit"]),
 input[value="GYMSTICK"]:checked ~ #fotos section > section:not([data-filter~="gymstick"]),
 input[value="MATCHU"]:checked ~ #fotos section > section:not([data-filter~="matchu"]),
@@ -387,33 +400,35 @@ input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="me
     display: none;
 }
 
+/*geef labels binnen filter id een bepaalde font*/
 #filter label {
     padding: 0 6px;
-    border: solid 1px grey;
-    background-color: lightgray;
+    border: solid 1px blue;
+    background-color: lightblue;
     border-radius: 3px;
 }
 
+/*wanneer er gehoverd word over lanbel binnen filter id verander kleur */
 #filter label:hover{
-    background-color: grey;
+    background-color: dodgerblue;
 }
 
 
-
-input[value="BENLEE"]:checked ~ filter label[for~="benlee"],
-input[value="REEBOK"]:checked ~ filter label[for~="reebok"],
-input[value="YOGAMAT"]:checked ~ filter label[for~="yogamat"],
-input[value="DOMYOS"]:checked ~ filter label[for~="domyos"],
-input[value="matchu"]:checked ~ filter label[for~="matchu"],
-input[value="TOORX"]:checked ~ filter label[for~="toorx"],
-input[value="MUSLE"]:checked ~ filter label[for~="muscle"],
-input[value="VIRTUFIT"]:checked ~ filter label[for~="virtufit"],
-input[value="BLACKROLL"]:checked ~ filter label[for~="blackroll"],
-input[value="TUNTURI"]:checked ~ filter label[for~="tunturi"],
-input[value="MERKLOOS"]:checked ~ filter label[for~="merkloos"],
-input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
+/*Aangeklikte label kleuren*/
+input[value="BENLEE"]:checked ~ .producten_filter #filter label[for="benlee"],
+input[value="REEBOK"]:checked ~ .producten_filter #filter label[for="reebok"],
+input[value="YOGAMAT"]:checked ~ .producten_filter #filter label[for="yogamat"],
+input[value="DOMYOS"]:checked ~ .producten_filter #filter label[for="domyos"],
+input[value="MATCHU"]:checked ~ .producten_filter #filter label[for="matchu"],
+input[value="TOORX"]:checked ~ .producten_filter #filter label[for="toorx"],
+input[value="MUSCLE"]:checked ~ .producten_filter #filter label[for="muscle"],
+input[value="VIRTUFIT"]:checked ~ .producten_filter #filter label[for="virtufit"],
+input[value="BLACKROLL"]:checked ~ .producten_filter #filter label[for="blackroll"],
+input[value="TUNTURI"]:checked ~ .producten_filter #filter label[for="tunturi"],
+input[value="MERKLOOS"]:checked ~ .producten_filter #filter label[for="merkloos"],
+input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"]
 {
-    background-color: black;
+    background-color: blue;
     color: white;
 }
 
@@ -425,6 +440,7 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
 /*Contact*/
 /*------------------------------------------------------*/
 
+/*De articlke binnen main van contact pagina is een grid container*/
 .contact_main article{
     display: grid;
     grid-template-areas:
@@ -433,35 +449,33 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 10px;
-    justify-items: stretch;
     align-items: center;
 }
 
+/*grid item*/
 .contact_main .contact_locatie {
     grid-area: kaart;
 }
-
+ /*kaart een border geven*/
 .contact_main .contact_locatie iframe {
     border: solid;
 }
 
+/*grid item foto contact center*/
 .contact_main .contact_foto {
     grid-area: cfoto;
 }
 
+/*grid item contact form*/
 .contact_main .contact_form{
     grid-area: form;
     justify-items: stretch;
 }
-
+/* contac form elemneten structuren in ene flex box*/
 .contact_main ul li{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
-
-
-
 
 
 /************footer************/
@@ -475,6 +489,7 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
     justify-content: space-around;
 }
 
+/* footer social media sectie is flexbox met tags naast elkaar*/
 .footer .footer_socialmedia {
     display: flex;
     /*flex-direction: row; /*default*/
@@ -482,34 +497,35 @@ input[value="GYMSTICK"]:checked ~ filter label[for~="gymstick"]
     justify-content: space-around;
 }
 
+/* binnen de social media flexbox worden is de ul een flexbox voor alle li */
 .footer .footer_socialmedia ul{
     display: flex;
     /*flex-direction: row; /*default*/
     align-self: center;
-    width: 100%;
-    justify-content: space-around;
+    width: 100%; /*volledige ruimte laten innemen*/
+    justify-content: space-around; /*verspried li*/
 }
 
-
-
+/*contact sectie is een flexbox */
 .footer_contact {
     display: flex;
     /*flex-direction: row; /*default*/
     width: 100%;
-    justify-content: space-around;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /*titel en ul onder elkaar */
 
 }
 
+/*Li binnnen ul onder relkaar*/
 .footer_contact ul{
     display: flex;
     /*flex-direction: row; /*default*/
-    width: 100%;
-    flex-direction: column;
+    width: 100%; /*gebruik volledige bredte flexbox*/
+    flex-direction: column;  /*contact gegevens onder elkaar*/
     text-align: center;
 
 }
 
+/*Voledige pagina reserveren*/
 .footer h2 {
     flex: 1 0 100%;
     text-align: center;
