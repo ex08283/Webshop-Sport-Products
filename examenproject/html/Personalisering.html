@@ -51,8 +51,8 @@
       <input type="text" id="naam"  required>
       <label for="achternaam">Achternaam</label>
       <input type="text" id="achternaam"  required>
-      <label for="address1">Straat en huisnummer</label>
-      <input type="text" id="address1" required>
+      <label for="address">Straat en huisnummer</label>
+      <input type="text" id="address" placeholder="leveringsadres" required>
       <label for="postcode">Postcode:</label>
       <input type="text" id="postcode" required>
       <label for="stad">Stad:</label>
@@ -60,7 +60,7 @@
       <label for="email">E-mail:</label>
       <input type="email" id="email"  required>
       <label for="tel">Tel:</label>
-      <input type="tel" id="tel"  required>
+      <input type="tel" id="tel" placeholder="+44(0) of 0044() gevolgd door nummer" required>
       </fieldset>
       <fieldset>
         <legend>Product gegevens</legend>
@@ -107,27 +107,24 @@
         <input type="number" id="aantal" min="1" max="10" required>
       </fieldset>
       <fieldset>
-        <legend>Graveing op item</legend>
+        <legend>Gravering op item</legend>
         <label for="gravering" class="Gravering text">Geef een woord op om op het item laten graveren (Max 10 tekens)</label>
         <textarea id="gravering"
                   placeholder="Gravering"
-                  maxlength="10" rows="1"></textarea>
-        <label for="inpakken" class="inpakken">Puzzel inpakken in cadeaupapier?</label>
-        <input type="checkbox" name="inpakken" value="inpakken" id="inpakken">
+                  maxlength="10"></textarea>
       </fieldset>
       <fieldset>
         <legend>Lever opties</legend>
         <label for="levertijd">Levertijd</label>
         <select id="levertijd">
-            <option value="1 dag"></option>
-            <option value="2 dagen"></option>
-            <option value="5 dagen"></option>
+            <option value="1_dag">1 dag</option>
+            <option value="2_dagen">2 dagen</option>
+            <option value="5_dagen">5 dagen</option>
         </select>
-        <label for="verpakkingsmateriaal">Wikkelen met cadeau?</label>
+        <label for="verpakkingsmateriaal">Wikkelen met cadeau papier?</label>
         <input type="checkbox" id="verpakkingsmateriaal">
-
-
       </fieldset>
+      <input type="submit" value="verzenden">
     </form>
   </article>
 </main>
