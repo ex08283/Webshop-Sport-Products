@@ -40,6 +40,10 @@ ul  {
     height: auto;
 }
 
+/*Meeste paginas bevatten en article binnen de main, deze geven we een 100% breedte*/
+.main article {
+    width: 100%;
+}
 
 
 /*H3 100% van de ruimte laten innemen*/
@@ -129,6 +133,11 @@ ul  {
 /*------------------------------------------------------*/
 /*Header voor alle paginas*/
 /*------------------------------------------------------*/
+
+/*Actieve pagina aanduiding*/
+#active {
+    color: midnightblue;
+}
 
 /*De header is als grid container gededineerd, is zelf een grid item binnen de body grid*/
 .header_grid {
@@ -413,7 +422,6 @@ input[value="MERKLOOS"]:checked ~ #fotos section > section:not([data-filter~="me
     background-color: dodgerblue;
 }
 
-
 /*Aangeklikte label kleuren*/
 input[value="BENLEE"]:checked ~ .producten_filter #filter label[for="benlee"],
 input[value="REEBOK"]:checked ~ .producten_filter #filter label[for="reebok"],
@@ -432,12 +440,8 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     color: white;
 }
 
-
-
-
-
 /*------------------------------------------------------*/
-/*Contact*/
+/*Contact pagina*/
 /*------------------------------------------------------*/
 
 /*De articlke binnen main van contact pagina is een grid container*/
@@ -531,6 +535,27 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     flex: 1 0 100%;
     text-align: center;
 }
+
+/*------------------------------------------------------*/
+/*Personalisering*/
+/*------------------------------------------------------*/
+
+.main form fieldset {
+    display: flex;
+    flex-flow: wrap column;
+}
+
+.main form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-style: oblique;
+}
+
+.main legend {
+    font-weight: bold;
+}
+
 
 
 
