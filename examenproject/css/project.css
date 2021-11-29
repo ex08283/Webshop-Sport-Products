@@ -69,11 +69,6 @@ ul  {
     display: flex;
 }
 
-/*Maak eerste niveau flex items in de rij richting*/
-.header_menu > ul {
-    flex-direction: row; /*Default*/
-}
-
 /*Maak tweede niveau flex items in de kolom richting*/
 .header_menu ul ul {
     flex-direction: column;
@@ -145,19 +140,18 @@ ul  {
     grid-area: gheader;
     background-color: orange;
     grid-template-areas: "logo  menu"
-                         "fitnessfreaks_titel ."
                          "breadcrumb breadcrumb";
     grid-auto-columns: 1fr 25fr;
     grid-auto-rows: auto;
-    max-height:5%;
     column-gap: 5px;
 }
 
 /* Header logo is een item binnen de header grid*/
 .header_logo {
     grid-area: logo;
-    align-self: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*font van de pagina titel*/
 .header_paginatitel {
@@ -165,7 +159,6 @@ ul  {
     color: blue;
     font-style: italic;
     text-transform: uppercase;
-    grid-area: fitnessfreaks_titel;
     text-align: center;
 }
 
@@ -173,6 +166,8 @@ ul  {
 .header_menu {
     grid-area: menu;
     align-self: center;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -333,7 +328,6 @@ ul  {
     grid-template-areas:
     "filter . overzicht"; /* ruimte tussen de grid items*/
     grid-template-columns: 20fr 1fr 50fr; /*ruimte indeling filter en prudcten overzicht */
-    width: 100%;
 }
 
 /*De filter is een grid element van article producten_grid*/
@@ -458,29 +452,84 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 }
 
 /*grid item*/
-.contact_main .contact_locatie {
+.contact_locatie {
+    display: flex;
     grid-area: kaart;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
 }
  /*kaart een border geven*/
-.contact_main .contact_locatie iframe {
+.contact_locatie iframe {
     border: solid;
 }
 
 /*grid item foto contact center*/
-.contact_main .contact_foto {
+.contact_foto {
+    display: flex;
     grid-area: cfoto;
+    justify-content: center;
 }
 
+/*---------------------------------------Formulieren stylen----------------------------------*/
 /*grid item contact form*/
-.contact_main .contact_form{
+#contact_form{
+    max-width: 80%;
     grid-area: form;
-    justify-items: stretch;
+    margin: 10px auto 3em; /*marges ban onderen geven zodanig verzend knop ruimte geven*/
+}
+
+/* form elementen structuren*/
+#contact_form label, #contact_form select{
+    display: inline-block; /*element naast elkaar gevold door line-break*/
+    width: 40%; /*alle labels breedte*/
+    margin-top: 10px; /*ruime onder labels*/
+}
+/*beedte juiste beedte geven zadanig dat op zelfde regel als een label past*/
+#contact_form input{
+    box-sizing: border-box;
+    width: 55%;
+}
+/*beedte juiste beedte geven zadanig dat op zelfde regel als een label past*/
+#contact_form option{
+    box-sizing: border-box;
+    width: 40%;
+}
+
+/*beedte text area aanpassen*/
+
+#contact_form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 10em;
+}
+
+
+#contact_form legend {
+    font-weight: bold;
+}
+
+/*Verzend knop*/
+#contact_form input[type="submit"] {
+    float: left;
+    margin: 1em 0;
+    width: 10em;
+}
+
+/*100% breedte for deze label in contact pagina*/
+#contact_form label[for="opmerkingen"] {
     width: 100%;
 }
-/* contac form elemneten structuren in ene flex box*/
-.contact_main ul li{
-    display: flex;
-    flex-direction: column;
+
+#contact_form textarea[id="gravering"] {
+    box-sizing: border-box;
+    width: 20%;
+    height: 2em;
+}
+
+
+#contact_form input[type="number"] {
+    width: 10em;
 }
 
 /************footer************/
@@ -536,28 +585,6 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     text-align: center;
 }
 
-/*------------------------------------------------------*/
-/*Personalisering*/
-/*------------------------------------------------------*/
-
-.main form fieldset {
-    display: flex;
-    flex-flow: wrap column;
-}
-
-.main form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    font-style: oblique;
-}
-
-.main legend {
-    font-weight: bold;
-}
-
-
-
 
 /*------------------------------------------------------*/
 /*Product pagina*/
@@ -565,13 +592,87 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 
 /**********Media queries***********/
 /*make grid responsive, below 600px change grid layout*/
-@media screen and (max-width: 660px){
-    .grid_home{
-        grid-auto-columns: 1fr;
-        grid-template-areas:
-            'gheader'
-            'gmain'
-            'gfooter';
-        grid-template-rows: unset;
+
+
+@media screen and (max-width: 1200px){
+    /*Alle menu items onder elkaar*/
+    .header_menu ul{
+        flex-direction: column;
     }
+
+    /*Sumbenu items naar beneden laten klappen*/
+    .header_menu .submenu > ul {
+        position: static;
+    }
+
+    /*Header structuur aanpassen*/
+    .header_grid {
+        display: grid;
+        grid-area: gheader;
+        grid-template-areas:
+        "logo menu"
+        "breadcrumb breadcrumb";
+        grid-auto-columns: 1fr 25fr;
+        grid-auto-rows: auto;
+        column-gap: 5px;
+    }
+
+}
+
+/*Resolutie kleiner dan 900*/
+@media screen and (max-width: 900px){
+    /*Header structuur aanpassen*/
+    .header_grid {
+        display: grid;
+        grid-area: gheader;
+        grid-template-areas:
+        "logo"
+        "menu"
+        "breadcrumb";
+        grid-auto-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+
+    /*Home pagina structuur van main verticaal*/
+    .body_grid > .main {
+        display: flex;
+        flex-direction: column;
+        grid-area: gmainhome;
+    }
+
+    /*footer structuur verticaal*/
+    .footer {
+        border: solid;
+        grid-area: gfooter;
+        display: flex;
+        flex-direction: column;
+        clear: both;
+        justify-content: space-around;
+    }
+
+
+    /*----------Contact pagina---------------------*/
+    /*Contact pagina structuur*/
+    .contact_main article {
+        grid-template-areas:
+        "cfoto"
+        "form"
+        "kaart";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+    }
+
+    /*Volledige breedte op een kleine scherm*/
+    #contact_form {
+        max-width: 100%;
+    }
+
+    /*Kaart laten meeschalen*/
+    .contact_locatie iframe[id="iframe"]{
+        width: unset;
+    }
+
+
 }
