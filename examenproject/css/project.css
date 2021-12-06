@@ -238,6 +238,11 @@ ul  {
 
 /*
 /*Artikels in de main zijn een flexbox About is een article met daarbinnen secties*/
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 .main .home_article  {
     display: flex;
     flex-direction: column;
@@ -439,29 +444,23 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 /*------------------------------------------------------*/
 
 /*De articlke binnen main van contact pagina is een grid container*/
-.contact_main article{
-    display: grid;
-    grid-template-areas:
-            "cfoto cfoto"
-            "kaart form";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 10px;
-    align-items: center;
-    justify-items: center;
-}
+.contact_body_grid {
+    margin: 0 auto;
+    width: 95%; /*body 95% van schermgrootte gecentreerd*/
 
-/*grid item*/
-.contact_locatie {
-    display: flex;
-    grid-area: kaart;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-}
- /*kaart een border geven*/
-.contact_locatie iframe {
-    border: solid;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+            "gheader"
+            "cfoto"
+            "contact_main"
+            "gfooter";
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 25fr 25fr 1fr; /*gebruik voor het nodige ruimte voor header en footer, en de rest voor de main*/
+    /*Scherm opvullen bij weinig inhoud*/
+    height: 97vh; /*vertikale scrollbar voorkomen*/
+    max-width: 97vw;
+    justify-self: stretch;
 }
 
 /*grid item foto contact center*/
@@ -471,11 +470,36 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     justify-content: center;
 }
 
+/*grid item*/
+.contact_main {
+    display: flex;
+    grid-area: contact_main;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact_main article {
+    display: flex;
+    align-self: stretch;
+    max-width: 100%;
+}
+
+.contact_main article section {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+ /*kaart een border geven*/
+.contact_main iframe {
+    border: solid;
+}
+
+
 /*---------------------------------------Formulieren stylen----------------------------------*/
 /*grid item contact form*/
 #contact_form{
     max-width: 80%;
-    grid-area: form;
     margin: 10px auto 3em; /*marges ban onderen geven zodanig verzend knop ruimte geven*/
 }
 
@@ -670,7 +694,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     }
 
     /*Kaart laten meeschalen*/
-    .contact_locatie iframe[id="iframe"]{
+    .contact_main iframe[id="iframe"]{
         width: unset;
     }
 
