@@ -464,6 +464,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     height: 97vh; /*vertikale scrollbar voorkomen*/
     max-width: 97vw;
     justify-self: stretch;
+    row-gap: 3%;
 }
 
 /*grid item foto contact center*/
