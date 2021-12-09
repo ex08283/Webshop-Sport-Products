@@ -463,7 +463,6 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     /*Scherm opvullen bij weinig inhoud*/
     height: 97vh; /*vertikale scrollbar voorkomen*/
     max-width: 97vw;
-    justify-self: stretch;
     row-gap: 3%;
 }
 
@@ -483,18 +482,18 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     flex-direction: column;
 }
 
+/*Bevat kaart en Contact form*/
 .contact_main article {
     display: flex;
-    justify-content: space-around;
-    column-gap: 2%;
+    column-gap: 2%; /*afstand tussen kaart en contact form*/
 }
 
+/*Kaart in contact form*/
 .contact_main article section {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 100%; /*even veel breedte in laten nemen*/
 }
 
  /*kaart een border geven*/
@@ -510,11 +509,8 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 #contact_form{
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-around;
     width: 100%;
-    height: 100%;
-    max-width: 80%;
-    margin: 3% auto 3em; /*marges ban onderen geven zodanig verzend knop ruimte geven*/
+    margin: 3% auto 0; /*marges van boven zodat contact form op zelfde hoogte is als kaart*/
 }
 
 /* form elementen structuren*/
