@@ -691,11 +691,6 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
         flex-flow: column wrap;
     }
 
-    /*Volledige breedte op een kleine scherm*/
-    #contact_form {
-        max-width: 100%;
-    }
-
     /*Kaart breedte en hoogte laten aanpassen*/
     .contact_main iframe[id="iframe"]{
         width: unset;
