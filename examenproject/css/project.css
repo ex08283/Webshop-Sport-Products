@@ -43,6 +43,7 @@ ul  {
 /*Meeste paginas bevatten en article binnen de main, deze geven we een 100% breedte*/
 .main article {
     width: 100%;
+    height: 100%;
 }
 
 
@@ -141,7 +142,6 @@ article H3 {
 .header_grid {
     display: grid;
     grid-area: gheader;
-    background-color: orange;
     grid-template-areas: "logo  menu"
                          "breadcrumb breadcrumb";
     grid-auto-columns: 1fr 25fr;
@@ -463,7 +463,6 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     /*Scherm opvullen bij weinig inhoud*/
     height: 97vh; /*vertikale scrollbar voorkomen*/
     max-width: 97vw;
-    row-gap: 3%;
 }
 
 /*grid item foto contact center*/
@@ -492,7 +491,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 .contact_main article section {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    justify-content: center;
     width: 100%; /*even veel breedte in laten nemen*/
 }
 
@@ -688,14 +687,8 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 
     /*----------Contact pagina---------------------*/
     /*Contact pagina structuur*/
-    .contact_main article {
-        grid-template-areas:
-        "cfoto"
-        "form"
-        "kaart";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-
+    .contact_main article{
+        flex-flow: column wrap;
     }
 
     /*Volledige breedte op een kleine scherm*/
@@ -703,10 +696,14 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
         max-width: 100%;
     }
 
-    /*Kaart laten meeschalen*/
+    /*Kaart breedte en hoogte laten aanpassen*/
     .contact_main iframe[id="iframe"]{
         width: unset;
+        height: unset;
     }
 
+    .contact_main h3{
+        text-align: center;
+    }
 
 }
