@@ -454,11 +454,11 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     display: grid;
     grid-gap: 10px;
     grid-template-areas:
-            "gheader"
-            "cfoto"
-            "contact_main"
-            "gfooter";
-    grid-template-columns: 1fr ;
+            "gheader gheader"
+            "cfoto cfoto"
+            "Kaart form"
+            "gfooter gfooter";
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 25fr 25fr 1fr; /*gebruik voor het nodige ruimte voor header en footer, en de rest voor de main*/
     /*Scherm opvullen bij weinig inhoud*/
     height: 97vh; /*vertikale scrollbar voorkomen*/
