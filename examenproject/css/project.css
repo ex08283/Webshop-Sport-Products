@@ -456,7 +456,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     grid-template-areas:
             "gheader gheader"
             "cfoto cfoto"
-            "Kaart form"
+            "kaart form"
             "gfooter gfooter";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 25fr 25fr 1fr; /*gebruik voor het nodige ruimte voor header en footer, en de rest voor de main*/
@@ -475,7 +475,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 /*grid item*/
 .contact_main {
     display: flex;
-    grid-area: contact_main;
+    grid-area: form;
     width: 100%;
     justify-content: center;
     flex-direction: column;
@@ -488,7 +488,8 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 }
 
 /*Kaart in contact form*/
-.contact_main article section {
+.kaart  {
+    grid-area: kaart;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
