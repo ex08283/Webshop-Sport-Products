@@ -1,5 +1,5 @@
 /*------------------------------------------------------*/
-/*Algemene eigenschappen commit for M6  */
+/*Algemene eigenschappen commit for M4  */
 /*------------------------------------------------------*/
 
 /*Algemene font alle paginas*/
@@ -482,24 +482,24 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 }
 
 /*Bevat kaart en Contact form*/
-.contact_main article {
-    display: flex;
-    column-gap: 2%; /*afstand tussen kaart en contact form*/
-}
+/*.contact_main article {*/
+/*    display: flex;*/
+/*    column-gap: 2%; !*afstand tussen kaart en contact form*!*/
+/*}*/
 
 /*Kaart in contact form*/
 .kaart  {
     grid-area: kaart;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     justify-content: center;
-    width: 100%; /*even veel breedte in laten nemen*/
+    align-items: center;
 }
 
  /*kaart een border geven*/
-.contact_main iframe {
+.kaart iframe {
     border: solid;
-    width: 100%;
+    width: 90%; /*breedte beperken*/
     height: 80%;
 }
 
@@ -613,8 +613,8 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 
 }
 
-/*Voledige pagina reserveren*/
-.footer h2 {
+/*Voledige breedte reserveren*/
+h2 {
     flex: 1 0 100%;
     text-align: center;
 }
@@ -688,13 +688,32 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 
     /*----------Contact pagina---------------------*/
     /*Contact pagina structuur*/
+    .contact_body_grid {
+        margin: 0 auto;
+        width: 95%; /*body 95% van schermgrootte gecentreerd*/
+
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+            "gheader"
+            "cfoto"
+            "kaart"
+            "form"
+            "gfooter";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 25fr 25fr 25fr 1fr; /*gebruik voor het nodige ruimte voor header en footer, en de rest voor de main*/
+        /*Scherm opvullen bij weinig inhoud*/
+        height: 97vh; /*vertikale scrollbar voorkomen*/
+        max-width: 97vw;
+    }
+
     .contact_main article{
         flex-flow: column wrap;
     }
 
     /*Kaart breedte en hoogte laten aanpassen*/
-    .contact_main iframe[id="iframe"]{
-        width: unset;
+    .kaart iframe[id="iframe"]{
+        width: 100%;
         height: unset;
     }
 
