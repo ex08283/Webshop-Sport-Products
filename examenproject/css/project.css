@@ -389,7 +389,7 @@ main {
 /*    display: none;*/
 /*}*/
 
-/*verberg input chekc boxen*/
+/*verberg input checkboxen*/
 .producten_grid input {
     display: none;
 }
@@ -505,22 +505,24 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 
 
 /*---------------------------------------Formulieren stylen----------------------------------*/
+/*---------------------------------------Contact form----------------------------------*/
 /*grid item contact form*/
+
 #contact_form{
     display: flex;
     flex-flow: column wrap;
-    width: 100%;
+    width: 70%;
     margin: 3% auto 0; /*marges van boven zodat contact form op zelfde hoogte is als kaart*/
 }
 
 /* form elementen structuren*/
-#contact_form label, #contact_form select{
+#contact_form label, #contact_form select, #contact_form div{
     display: inline-block; /*element naast elkaar gevold door line-break*/
     width: 40%; /*alle labels breedte*/
     margin-top: 10px; /*ruime onder labels*/
 }
 /*beedte juiste beedte geven zadanig dat op zelfde regel als een label past*/
-#contact_form input{
+#contact_form input, #contact_form span{
     box-sizing: border-box;
     width: 55%;
 }
@@ -529,6 +531,7 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
     box-sizing: border-box;
     width: 40%;
 }
+
 
 /*beedte text area aanpassen*/
 
@@ -565,6 +568,28 @@ input[value="GYMSTICK"]:checked ~ .producten_filter #filter label[for="gymstick"
 #contact_form input[type="number"] {
     width: 10em;
 }
+
+
+#contact_form span {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#contact_form #achternaam_p{
+    background-color: yellow;
+}
+
+#contact_form #email_p{
+    background-color: orange;
+}
+
+#contact_form span {
+    color: red;
+}
+
+
+
+
 
 /************footer************/
 /*De footer grid is een grid element binnen de body grid*/
@@ -650,6 +675,12 @@ h2 {
         grid-auto-rows: auto;
         column-gap: 5px;
     }
+
+    #contact_form{
+        width: 100%;
+    }
+
+
 
 }
 

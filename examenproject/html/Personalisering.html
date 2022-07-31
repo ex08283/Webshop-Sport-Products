@@ -6,6 +6,7 @@
   <link rel="icon" href="../media/fotos/favicon/apple-icon-57x57.png">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/project.css">
+  <script src="../script/form_validation.js" defer></script>
 </head>
 <body class="body_grid">
 <header class="header_grid">
@@ -50,31 +51,58 @@
     <form id="contact_form" action="Bevestigingspagina.html" method="get">
       <fieldset>
       <legend>Vul hier je gegevens in</legend>
-      <label for="naam_p">Naam</label>
-      <input type="text" id="naam_p" name="naam_p" required>
-      <label for="achternaam_p">Achternaam</label>
-      <input type="text" id="achternaam_p" name="achternaam_p" required>
-      <label for="address">Straat en huisnummer</label>
-      <input type="text" id="address" name="address" placeholder="leveringsadres" required>
-      <label for="postcode">Postcode:</label>
-      <input type="text" id="postcode" name="postcode" required>
-      <label for="stad">Stad:</label>
-      <input type="text" id="stad" name="stad" required>
-      <label for="email_p">E-mail:</label>
-      <input type="email" id="email_p" name="email_p" required>
-      <label for="tel_p">Tel:</label>
-      <input type="tel" id="tel_p" name="tel_p" placeholder="+44(0) of 0044() gevolgd door nummer" required>
+        <ul>
+          <li>
+            <label for="naam_p">Naam</label>
+            <input type="text" id="naam_p" name="naam_p">
+          </li>
+          <li>
+            <label for="achternaam_p">Achternaam</label>
+            <input type="text" id="achternaam_p" name="achternaam_p">
+          </li>
+          <li>
+            <div></div>
+            <span id="errorAchternaam"></span>
+          </li>
+          <li>
+          <label for="address">Straat en huisnummer</label>
+          <input type="text" id="address" name="address" placeholder="leveringsadres" >
+          </li>
+          <li>
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" >
+          </li>
+          <li>
+            <label for="stad">Stad:</label>
+            <input type="text" id="stad" name="stad" >
+          </li>
+          <li>
+            <label for="email_p">E-mail:</label>
+            <input type="email" id="email_p" name="email_p" >
+          </li>
+          <li>
+            <div></div>
+            <span id="errorEmail"></span>
+          </li>
+          <li>
+            <label for="tel_p">Tel:</label>
+            <input type="tel" id="tel_p" name="tel_p" placeholder="+44(0) of 0044() gevolgd door nummer" >
+          </li>
+        </ul>
+
+
+
       </fieldset>
       <fieldset>
         <legend>Product gegevens</legend>
         <label for="productcategorie">Product categorie:</label>
-        <select id="productcategorie">
+        <select name="productcategorie" id="productcategorie">
           <option value="kettlebells">Kettlebells</option>
           <option value="fitnessmatten">Fitness Matten</option>
           <option value="weerstandbanden">Weerstandbanden</option>
         </select>
         <label for="kleur">Kies een kleur:</label>
-        <select id="kleur">
+        <select name="kleur" id="kleur">
           <optgroup label="Kettlebells">
             <option value="roze">Roze</option>
             <option value="zwart">Zwart</option>
@@ -94,7 +122,7 @@
           </optgroup>
         </select>
         <label for="gewicht">Gewicht</label>
-        <select id="gewicht">
+        <select  name="gewicht" id="gewicht">
           <optgroup label="Kettlebells">
             <option value="3kg">3 KG</option>
             <option value="4kg">4 KG</option>
@@ -107,7 +135,7 @@
           </optgroup>
         </select>
         <label for="aantal">Aantal stuks</label>
-        <input type="number" id="aantal" name="aantal" min="1" max="10" required>
+        <input type="number" id="aantal" name="aantal" min="1" max="10">
       </fieldset>
       <fieldset>
         <legend>Gravering op item</legend>
@@ -120,10 +148,10 @@
       <fieldset>
         <legend>Lever opties</legend>
         <label for="levertijd">Levertijd</label>
-        <select id="levertijd">
-            <option value="1_dag">1 dag</option>
-            <option value="2_dagen">2 dagen</option>
-            <option value="5_dagen">5 dagen</option>
+        <select id="levertijd" name="levertijd">
+            <option value="1 dag">1 dag</option>
+            <option value="2 dagen">2 dagen</option>
+            <option value="5 dagen">5 dagen</option>
         </select>
         <label for="verpakkingsmateriaal">Wikkelen met cadeau papier?</label>
         <input type="checkbox" id="verpakkingsmateriaal" name="verpakkingsmateriaal">
