@@ -41,14 +41,17 @@
             <li><a href="../index.html">Home</a></li>
             <!--            <li><a href="#">Pictures</a></li>-->
             <!--            <li><a href="#">Summer 15</a></li>-->
-            <li>Producten</li>
+            <li>Producten </li>
         </ul>
     </nav>
+<!--    <nav class="breadcrumb_right">-->
+<!--        <button><a href="producten_copy.html">Dynamiche Producten Pagina</a></button>-->
+<!--    </nav>-->
+
 </header>
 <main class="main">
     <article class="producten_grid">
         <!-- Input element op yelfde niveau als  section class="producten_overzicht"      -->
-
         <h2 class="hiddenTitle">All producten overzicht</h2>
         <input type="checkbox" id="benlee" value="BENLEE">
         <input type="checkbox" id="reebok" value="REEBOK">
@@ -62,8 +65,9 @@
         <input type="checkbox" id="tunturi" value="TUNTURI">
         <input type="checkbox" id="merkloos" value="MERKLOOS">
         <input type="checkbox" id="gymstick" value="GYMSTICK">
-<!--        <input type="checkbox" id="alles" value="ALLES">-->
+        <!--        Product Filter-->
         <section class="producten_filter">
+            <button class="producten_filter"><a href="producten_copy.html">Dynamiche Producten Pagina</a></button>
             <h3>Toepast Filter</h3>
             <section>
                 <h4 class="hiddenTitle">Merk</h4>
@@ -87,13 +91,12 @@
         </section>
         <section class="producten_overzicht" id="fotos">
             <h3 class="hiddenTitle">Product Categorien</h3>
-            <section>
+             <section>
                 <h4 id="kettlebells">Kettlebells</h4>
-                <section data-filter="benlee" class="benlee">
+                <section data-filter="benlee">
                     <h5>BENLEE KETTLEBELL 3 KG ROZE</h5>
-                    <a href="Productdetail/kettlebell_3_kg_roze.html">
-                        <img class="foto_schaling"
-                             src="../media/fotos/productlogos/kettlebells/BENLEE_3KG_ROZE.png" alt="BENLEE_3KG_ROZE"></a>
+                    <a href="Productdetail/kettlebell_3_kg_roze.html"><img class="foto_schaling" src="../media/fotos/productlogos/kettlebells/BENLEE_3KG_ROZE.png" alt="BENLEE_3KG_ROZE">
+                    </a>
                     <p>€ 20.95</p>
                 </section>
                 <section data-filter="domyos" >
@@ -167,13 +170,13 @@
                          src="../media/fotos/productlogos/fitnessmatten/VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR.png" alt="VIRTUFIT_UNIVERSELE_VLOERMAT_BESCHERMMAT_FITNESSAPPARATUUR">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles merkloos">
+                <section data-filter="merkloos">
                     <h5>Opvouwbare fitnessmat blauw</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/fitnessmatten/OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM.png" alt="OPVOUWBAREFITNESSMATBLAUW160CMX60CMX7MM">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles reebok" class="reebok">
+                <section data-filter="reebok">
                     <h5>Reebok Vloermat</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/fitnessmatten/REEBOK_VLOETMAT.png" alt="REEBOK_VLOETMAT">
@@ -182,38 +185,38 @@
             </section>
             <section >
                 <h4 id="weerstandsbanden">Weerstandbanden</h4>
-                <section data-filter="alles blackroll">
+                <section data-filter="blackroll">
                     <h5>BLACKROLL RESIST BAND - Grijs</h5>
                     <a href="Productdetail/BLACKROLl_RESIST_BAND_Grijs.html">
                         <img class="foto_schaling"
                              src="../media/fotos/productlogos/elastieken/BLACKROLL_RESISTBAND_GRIJS.png" alt="BLACKROLL_RESISTBAND_GRIJS"></a>
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles merkloos">
+                <section data-filter="merkloos">
                     <h5>Korte weerstandsbanden rubber set van 3 turquoise/bordeaux/zwart</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/elastieken/KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART.png" alt="KORTE_WEERSTANDSBANDEN567KG_RUBBER_SET_VAN_3_TURQUOISE_BORDEAUX_ZWART">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles tunturi">
+                <section data-filter="tunturi">
                     <h5>Tunturi Weerstandsbanden Set - Textiel - 3 stuks</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/elastieken/TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS.png" alt="TUNTURI_WEERSTANDSBANDEN_SET_TEXTIEL_3STUKS">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles matchu">
-                    <h5> MATCHU - Weerstandsband - Medium</h5>
+                <section data-filter="matchu">
+                    <h5>MATCHU - Weerstandsband - Medium</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_MEDIUM.png" alt="WEERSTANDSBAND_MEDIUM">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles matchu">
+                <section data-filter="matchu">
                     <h5>MATCHU- Weerstandsbanden set - GeelRoodGroenBlauw - Latex</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/elastieken/WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX.png" alt="WEERSTANDSBANDEN_SET_GEELROODGROENBLAUW_LATEX">
                     <p>€ 20.95</p>
                 </section>
-                <section data-filter="alles domyos">
+                <section data-filter="domyos">
                     <h5>DOMYOS Weerstandsband glute band krachttraining billen hard</h5>
                     <img class="foto_schaling"
                          src="../media/fotos/productlogos/elastieken/WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD.png" alt="WEERSTANDSBAND_GLUTE_BAND_KRACHTTRAINING_BILLEN%20_HARD">

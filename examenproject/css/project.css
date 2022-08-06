@@ -143,7 +143,7 @@ article H3 {
     display: grid;
     grid-area: gheader;
     grid-template-areas: "logo  menu"
-                         "breadcrumb breadcrumb";
+                         "breadcrumb breadcrumb_right";
     grid-auto-columns: 1fr 25fr;
     grid-auto-rows: auto;
     column-gap: 5px;
@@ -195,6 +195,26 @@ article H3 {
 .breadcrumb {
     grid-area: breadcrumb;
 }
+
+/*delete later*/
+/*!*-----------------positionering knop originele/dynamysche producten pagina-------------------------------------*!*/
+
+/*.breadcrumb_right {*/
+/*    position: relative;*/
+/*    grid-area: breadcrumb_right;*/
+/*}*/
+
+/*.breadcrumb_right button a{*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.breadcrumb_right button {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%,-50%);*/
+
+/*}*/
 
 /*------------------------------------------------------*/
 /*Home pagina*/
@@ -261,7 +281,7 @@ main {
 }
 /*testimonial link is een section volgens wireframe*/
 .main .testimonials  {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     flex: 1;
 
