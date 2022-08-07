@@ -1,5 +1,6 @@
 let main;
 let article;
+let reverseButton;
 
 
 class Product {
@@ -49,7 +50,6 @@ class Category {
 
 
     addProduct(Product) {
-        console.log(Product)
         this.section.appendChild(Product.getProductNode());
     }
 
@@ -62,8 +62,10 @@ addEventListener('load', init);
 
 function init() {
     createMain()
+    reverseButton.addEventListener('click',createCategories)
+
     let footer = document.querySelector(".footer");
-    parentSection = footer.parentNode
+    let parentSection = footer.parentNode
     parentSection.insertBefore(main,footer);
 }
 
@@ -86,6 +88,7 @@ function createMain() {
 
     createProductFilter()
     createProductSection()
+
     main.appendChild(article)
 
 }
@@ -94,12 +97,21 @@ function createProductFilter() {
     let sectionProductenFilter = document.createElement('section')
     sectionProductenFilter.classList.add('producten_filter')
 
-    sectionProductenFilter.innerHTML += `<button className="producten_filter"><a href="producten.html">Originele Producten Pagina</a></button>`
+    sectionProductenFilter.innerHTML += `<button class="producten_filter"><a href="../html/producten.html">Originele Producten Pagina</a></button>`
+
     sectionProductenFilter.innerHTML += `<h3>Toepast Filter</h3>`
 
+    //Create Reverse Button
+    reverseButton = document.createElement('button');
+    reverseButton.setAttribute('id','reverse')
+    reverseButton.innerHTML = 'Reverse Product Order'
+    sectionProductenFilter.insertBefore(reverseButton, sectionProductenFilter.children[1])
+
+
+
+    //Create section for filter labels
     let sectionFilter = document.createElement('section')
     sectionFilter.innerHTML += `<h4 class="hiddenTitle">Merk</h4>`
-
     let fieldsetFilter = document.createElement('fieldset');
     fieldsetFilter.setAttribute('id','filter')
     fieldsetFilter.innerHTML += `<legend>Merk</legend>`
@@ -121,7 +133,6 @@ function createProductSection() {
     sectionProductOverZicht.setAttribute('id','fotos')
     sectionProductOverZicht.innerHTML += `<h3 class="hiddenTitle">Product Categorien</h3>`
 
-
     let categories = [];
     let i = 0;
     for (const category of categoryData) {
@@ -130,7 +141,6 @@ function createProductSection() {
     }
 
     for (const item of productData) {
-        console.log(item)
 
         let product = new Product(
             item[1],
@@ -152,7 +162,31 @@ function createProductSection() {
     for (const category of categories) {
         sectionProductOverZicht.appendChild(category.getSectionCategory())
     }
+    
+    
     article.appendChild(sectionProductOverZicht)
+    
+    
+}
+
+function createCategories(event) {
+    let parent = document.querySelector('.producten_overzicht')
+
+    let firstChild = parent.firstChild;
+    parent.removeChild(firstChild) //verwijder de hidden h3
+
+
+    for (var i = 0; i < parent.childNodes.length; i++){
+        let firstSubChild = parent.childNodes[i].firstChild;
+        parent.childNodes[i].removeChild(firstSubChild) //verwijder de h4 binnen de secties alvorens te reversen van producten
+        for (var j = 0; j < parent.childNodes[i].childNodes.length; j++) {
+            parent.childNodes[i].insertBefore(parent.childNodes[i].childNodes[j], parent.childNodes[i].firstChild)
+        }
+        parent.childNodes[i].insertBefore(firstSubChild, parent.childNodes[i].children[0]); //voeg de h4 weer toe bovenaan
+        parent.insertBefore(parent.childNodes[i], parent.firstChild);
+
+    }
+    parent.insertBefore(firstChild, parent.children[0]); //voeg hidden h4 weer toe
 
 }
 
